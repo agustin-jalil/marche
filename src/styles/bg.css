@@ -1,0 +1,22 @@
+html, body {
+  height: 100%; 
+  margin: 0;
+  font-family: 'Lato', sans-serif; 
+}
+
+.animated-gradient {
+  min-height: 100%;      /* ocupa como mínimo toda la página */
+  height: auto;          /* deja que crezca según el contenido */
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  background: linear-gradient(
+    to bottom,
+    var(--c1) 0%,
+    var(--c2) 50%,
+    var(--c3) 100%
+  );
+
+  background-attachment: fixed; /* opcional: hace que el gradiente siempre cubra */
+}

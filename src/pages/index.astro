@@ -1,16 +1,30 @@
 ---
-
+import Header from "../components/home/Header.astro";
+import Layout from "./layout.astro";
+import Card from "../components/home/Card.astro";
+import "../styles/index.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+
+
+	<Header/>
+	<Card
+		title="Proyecto 1"
+		subtitle="Subtítulo del proyecto 1"
+		videoUrl="/videos/video1.mp4"
+		description="Descripción breve del proyecto 1."
+		buttonText="Ver más"
+		buttonLink="#"
+	/>
+
+	<Card
+		title="Proyecto 2"
+		subtitle="Subtítulo del proyecto 1"
+		videoUrl="/videos/video1.mp4"
+		description="Descripción breve del proyecto 1."
+		buttonText="Ver más"
+		buttonLink="#"
+	/>
+</Layout>
+

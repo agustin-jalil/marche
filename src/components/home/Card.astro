@@ -1,0 +1,64 @@
+---
+export interface Props {
+    title: string;
+    subtitle: string;
+    videoUrl: string;
+    description: string;
+    buttonText: string;
+    buttonLink: string;
+}
+
+const { title, subtitle, videoUrl, description, buttonText, buttonLink } = Astro.props;
+---
+
+<div class="card">
+    <h2>{title}</h2>
+    <small>{subtitle}</small>
+    <video src={videoUrl} controls width="100%" />
+    <p>{description}</p>
+    <a href={buttonLink} class="card-button">{buttonText}</a>
+</div>
+
+<style>
+.card {
+    display: flex;
+    flex-direction: column;       /* ahora en columna */
+    align-items: start;          /* todo centrado horizontal */
+    text-align: center;           /* texto centrado */
+    gap: 1rem;  
+    width: 100%;
+    margin: 2rem 0;          
+}
+
+.card > h2 {
+    margin: 0;
+}
+
+.card > small {
+    color: #888;
+}
+
+.card-video {
+    width: 100%;
+}
+
+.card > p {
+    margin: 0;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background: #0077ff;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s;
+
+    align-self: flex-end; /* 👈 mueve el botón al lado opuesto */
+}
+.card-button:hover {
+    background: #005fcc;
+}
+</style>
