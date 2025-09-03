@@ -1,0 +1,53 @@
+---
+import Layout from './layout.astro';
+---
+
+<Layout>
+    <article class="blog-post">
+        <h1>Políticas de la Empresa</h1>
+        <div class="video-container" style="margin: 2rem 0;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Video de Políticas" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <section>
+            <h2>Introducción</h2>
+            <p>
+                En esta página encontrarás las políticas que rigen el funcionamiento de nuestra empresa. 
+                Es importante que todos los colaboradores y clientes conozcan y respeten estas normas para garantizar un ambiente de trabajo seguro y productivo.
+            </p>
+            <h2>Política de Privacidad</h2>
+            <p>
+                Nos comprometemos a proteger la información personal de nuestros usuarios. Todos los datos recopilados son tratados con estricta confidencialidad y solo se utilizan para mejorar nuestros servicios.
+            </p>
+            <h2>Política de Calidad</h2>
+            <p>
+                Buscamos la excelencia en cada uno de nuestros procesos. Nuestro equipo está capacitado para ofrecer productos y servicios que cumplen con los más altos estándares de calidad.
+            </p>
+            <h2>Conclusión</h2>
+            <p>
+                Si tienes dudas sobre alguna de nuestras políticas, no dudes en contactarnos. Estamos aquí para ayudarte y asegurarnos de que tengas la mejor experiencia posible.
+            </p>
+        </section>
+    </article>
+    <style>
+        .blog-post {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .video-container {
+            display: flex;
+            justify-content: center;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        p {
+            color: #444;
+            line-height: 1.7;
+        }
+    </style>
+</Layout>
