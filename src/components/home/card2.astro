@@ -1,18 +1,28 @@
 ---
 const { title, subtitle, videoUrl, description, buttonText, buttonLink } = Astro.props;
+
+// Función para reproducir/pausar el video
+const togglePlay = (event) => {
+  event.stopPropagation();
+  const card = event.currentTarget.closest('.card');
+  const video = card.querySelector('video');
+  if (!video) return;
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+};
 ---
 
 <div class="card">
-  <!-- iframe de YouTube -->
-  <div class="video-container">
-    <iframe
-      src={videoUrl}
-      title={title}
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
+  <video muted loop playsinline>
+    <source src={videoUrl} type="video/mp4" />
+    Tu navegador no soporta video.
+  </video>
+
+  <!-- botón de play/pause centrado -->
+  <button class="play-button" onClick={togglePlay}>▶</button>
 
   <div class="overlay">
     <div class="overlay-card">
@@ -33,25 +43,42 @@ const { title, subtitle, videoUrl, description, buttonText, buttonLink } = Astro
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,.3);
     margin: 1rem auto;
+    cursor: pointer;
   }
 
-  /* iframe como fondo */
-  .video-container {
+  /* video como fondo */
+  .card video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     z-index: 1;
   }
 
-  .video-container iframe {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  /* botón de play/pause en el centro */
+  .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: #fff;
+    font-size: 2.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
   }
 
-  /* overlay encima del iframe */
+  .play-button:hover {
+    background: rgba(0,0,0,0.8);
+  }
+
+  /* overlay de texto */
   .overlay {
     position: relative;
     z-index: 2;
@@ -62,10 +89,10 @@ const { title, subtitle, videoUrl, description, buttonText, buttonLink } = Astro
     background: linear-gradient(to top, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 100%);
     color: #fff;
     padding: 0 10px;
-    pointer-events: none;
+    pointer-events: none; /* clicks pasan al botón */
   }
 
-  .overlay-card {
+  .overlay-card{
     padding: 10px;
     display: flex;
     flex-direction: column;

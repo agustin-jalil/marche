@@ -4,33 +4,30 @@ import Socials from "../components/home/Socials.astro";
 import Partido from "../components/home/Partido.astro";
 import Layout from "./layout.astro";
 import Card from "../components/home/Card.astro";
-import "../styles/index.css";
 import Footer from "../components/Footer.astro";
+
+// importamos el JSON
+import data from "../data/data.json";
+import "../styles/index.css";
 ---
 
 <Layout>
+  <Header />
+  <Socials />
+  <Partido />
 
+  {
+    data.map(item => (
+      <Card
+        title={item.titulo}
+        subtitle={item.etiquetas.join(", ")}
+        videoUrl={item.video}
+        description={item.secciones[0].contenido}
+        buttonText="Ver más"
+        buttonLink={`/${item.id}`}
+      />
+    ))
+  }
 
-	<Header/>
-	<Socials/>
-	<Partido/>
-	<Card
-		title="Proyecto 1"
-		subtitle="Subtítulo del proyecto 1"
-		videoUrl="/videos/video1.mp4"
-		description="Descripción breve del proyecto 1."
-		buttonText="Ver más"
-		buttonLink="/politicas"
-	/>
-
-	<Card
-		title="Proyecto 2"
-		subtitle="Subtítulo del proyecto 1"
-		videoUrl="/videos/video1.mp4"
-		description="Descripción breve del proyecto 1."
-		buttonText="Ver más"
-		buttonLink="/politicas"
-	/>
-	<Footer/>
+  <Footer />
 </Layout>
-

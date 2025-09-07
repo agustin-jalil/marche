@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "titulo": "Políticas de la Empresa",
+    "etiquetas": ["Políticas", "Empresa", "Normas"],
+    "ultimaActualizacion": "junio 2024",
+    "video": "https://www.youtube.com/embed/ve0pA7XPLig",
+    "secciones": [
+      {
+        "subtitulo": "Introducción",
+        "contenido": "En esta página encontrarás las políticas que rigen el funcionamiento de nuestra empresa..."
+      },
+      {
+        "subtitulo": "Política de Privacidad",
+        "contenido": "Nos comprometemos a proteger la información personal de nuestros usuarios..."
+      },
+      {
+        "subtitulo": "Política de Calidad",
+        "contenido": "Buscamos la excelencia en cada uno de nuestros procesos..."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "titulo": "Normas de Seguridad",
+    "etiquetas": ["Seguridad", "Trabajo"],
+    "ultimaActualizacion": "julio 2024",
+    "video": "https://www.w3schools.com/html/mov_bbb.mp4",
+    "secciones": [
+      {
+        "subtitulo": "General",
+        "contenido": "La seguridad es responsabilidad de todos los colaboradores..."
+      },
+      {
+        "subtitulo": "Uso de EPP",
+        "contenido": "Es obligatorio el uso de equipo de protección personal..."
+      }
+    ]
+  }
+]

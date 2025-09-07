@@ -1,7 +1,8 @@
 ---
-const avatarUrl = "https://media.istockphoto.com/id/1483119051/photo/grey-wolf-looking-straight-in-the-forest.jpg?s=1024x1024&w=is&k=20&c=yCK3B9omsFo-SfGtbroJ60vciuX2rvybi3dmNgE06yY="; // Cambia esto por la ruta de tu imagen
-const title = "Guguito Marchetti";
-const subtitulo = "Candidato a Emperador";
+const avatarUrl = "https://media.istockphoto.com/id/1483119051/photo/grey-wolf-looking-straight-in-the-forest.jpg?s=1024x1024&w=is&k=20&c=yCK3B9omsFo-SfGtbroJ60vciuX2rvybi3dmNgE06yY=";
+const title = "Agustin Marchetti";
+const subtitulo = "Candidato a Diputado Provincial";
+const descripcion = "Elecciones Octubre para Diputado 2025 por Somos Provincias Unidas."; // Nuevo parámetro
 const partido = "Partido de los Animales";
 const socialLinks = [
     { name: "Twitter", url: "https://twitter.com/", icon: "🐦" },
@@ -16,7 +17,7 @@ const socialLinks = [
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
     text-align: center;
     width: 100%;
 }
@@ -26,6 +27,22 @@ const socialLinks = [
     border-radius: 50%;
     object-fit: cover;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+h1 {
+    margin: 0;
+    max-width:75%;
+    text-align:center;
+}
+h3 {
+    margin: 0;
+    max-width:75%;
+}
+.descripcion {
+    color: #888888; /* Gris */
+    font-size: 1rem;
+    margin-block: 1rem;
+    padding-bottom: 1rem;
+    max-width:75%;
 }
 
 @media (max-width: 767.98px) {
@@ -37,11 +54,10 @@ const socialLinks = [
     border-radius: 10px;
   }
 
-    .avatar {
-        width: 250px;
-        height: 250px;
-    }
-
+  .avatar {
+    width: 250px;
+    height: 250px;
+  }
 }
 </style>
 
@@ -49,4 +65,5 @@ const socialLinks = [
     <img src={avatarUrl} alt="Avatar" class="avatar" />
     <h1>{title}</h1>
     <h3>{subtitulo}</h3>
+    <p class="descripcion">{descripcion}</p>
 </div>

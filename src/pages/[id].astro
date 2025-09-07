@@ -1,0 +1,50 @@
+---
+import Footer from '../components/Footer.astro';
+import Layout from './layout.astro';
+import data from '../data/data.json';
+
+// 🔹 Generar las rutas estáticas
+export async function getStaticPaths() {
+  return data.map(item => ({
+    params: { id: item.id }, // el nombre del archivo dinámico [id].astro
+    props: { documento: item } // pasamos el documento como props
+  }));
+}
+
+// 🔹 Recuperamos los datos pasados en props
+const { documento } = Astro.props;
+---
+
+<Layout>
+  <article class="blog-post">
+    <div class="blog-header">
+      <h1>{documento.titulo}</h1>
+      <div style="display: flex; justify-content: space-between;">
+        <small>
+          Etiquetas: <em>{documento.etiquetas.join(", ")}</em>
+        </small>
+        <small>
+          Última actualización: {documento.ultimaActualizacion}
+        </small>
+      </div>
+    </div>
+
+    <div class="video-container" style="margin: 2rem 0;">
+      <video width="100%" height="400" controls>
+        <source src={documento.video} type="video/mp4" />
+        Tu navegador no soporta la reproducción de video.
+      </video>
+    </div>
+
+    <section>
+      {documento.secciones.map(seccion => (
+        <>
+          <h2>{seccion.subtitulo}</h2>
+          <p>{seccion.contenido}</p>
+        </>
+      ))}
+    </section>
+  </article>
+
+  <Footer/>
+</Layout>
