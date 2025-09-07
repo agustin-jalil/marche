@@ -1,0 +1,61 @@
+---
+// Footer.astro
+---
+
+<footer class="footer">
+    <div class="footer-content">
+        <!-- logo  -->
+        <h2>Partido Político Ejemplo</h2>
+        <p>
+            Unidos por el cambio y el progreso. ¡Súmate a nuestra causa!
+        </p>
+        <div class="footer-social">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <small>&copy; {new Date().getFullYear()} Partido Político Ejemplo. Todos los derechos reservados.</small>
+    </div>
+</footer>
+
+<style>
+.footer {
+    padding: 2rem 0;
+    width: 100%;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.footer-content h2 {
+    margin-bottom: 1rem;
+}
+.footer-content p {
+    max-width: 400px;
+    margin-bottom: 1rem;
+}
+.footer-social {
+    margin-bottom: 1rem;
+}
+.footer-social a {
+    margin: 0 0.5rem;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 767.98px) {
+    .footer{
+        background-color: white;
+        padding: 20px 0px;
+        border-radius: 10px;
+        margin-bottom: 3rem;
+        gap: 2rem;
+    }
+
+    .footer-content{
+        padding: 20px;
+    }
+}
+</style>

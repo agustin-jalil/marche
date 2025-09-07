@@ -1,21 +1,80 @@
 ---
 import "../styles/index.css";
+
+const title = "Agustin Marchetti - Provincias Unidas";
+const description = "Bienvenido a la página oficial de mi candidatura a Diputado. Aquí encontrarás mis propuestas, proyectos y compromisos para construir un futuro mejor. Te invito a conocer mi trabajo y a ser parte del cambio.";
+const url = "https://agustinmarchetti.netlify.app/"; // cambia por tu dominio real
+const image = `${url}/og-image.jpg`; // fallback imagen
+const video = "https://www.w3schools.com/html/mov_bbb.mp4"; // video de ejemplo público
+const videoType = "video/mp4";
 ---
 
-<html lang="en">
+<html lang="es">
 	<head>
+		<!-- Metadatos básicos -->
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+
+		<!-- Favicon -->
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+		<!-- SEO -->
+		<link rel="canonical" href={url} />
+		<meta name="robots" content="index, follow" />
+
+		<!-- Open Graph (Facebook, LinkedIn, etc.) -->
+		<meta property="og:type" content="video.other" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={image} /> <!-- fallback -->
+		<meta property="og:site_name" content="Mi Proyecto" />
+		<meta property="og:video" content={video} />
+		<meta property="og:video:type" content={videoType} />
+		<meta property="og:video:width" content="1280" />
+		<meta property="og:video:height" content="720" />
+
+		<!-- Twitter Cards -->
+		<meta name="twitter:card" content="player" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={image} />
+		<meta name="twitter:player" content={video} />
+		<meta name="twitter:player:width" content="1280" />
+		<meta name="twitter:player:height" content="720" />
+
+		<!-- Accesibilidad / PWA -->
+		<meta name="theme-color" content="#0f172a" />
+		<link rel="manifest" href="/site.webmanifest" />
+
+		<!-- Tipografías -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+
+		<!-- Schema.org con Video -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "VideoObject",
+				"name": "{title}",
+				"description": "{description}",
+				"thumbnailUrl": "{image}",
+				"uploadDate": "2025-09-06",
+				"contentUrl": "{video}",
+				"embedUrl": "{video}"
+			}
+		</script>
 	</head>
-	<!-- HTML -->
+
 	<body class="animated-gradient">
 		<main class="container">
-			<!-- Tu contenido aquí -->
 			<slot />
 		</main>
 	</body>
-
 </html>

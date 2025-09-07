@@ -1,13 +1,26 @@
 ---
+import Footer from '../components/Footer.astro';
 import Layout from './layout.astro';
 ---
 
 <Layout>
     <article class="blog-post">
-        <h1>Políticas de la Empresa</h1>
+        <div class="blog-header">
+            <h1>Políticas de la Empresa</h1>
+            <div style="display: flex; justify-content: space-between;">
+                <small>
+                 Tags: <em>Políticas, Empresa, Normas</em>
+                </small>
+                <small>
+                Última actualización: junio 2024
+                </small>
+            </div>
+        </div>
         <div class="video-container" style="margin: 2rem 0;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="Video de Políticas" frameborder="0" allowfullscreen></iframe>
+            <video width="100%" height="400" controls>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+                Tu navegador no soporta la reproducción de video.
+            </video>
         </div>
         <section>
             <h2>Introducción</h2>
@@ -29,19 +42,24 @@ import Layout from './layout.astro';
             </p>
         </section>
     </article>
+    <Footer/>
     <style>
         .blog-post {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            width: 100%;
         }
         .video-container {
             display: flex;
-            justify-content: center;
+            justify-content: start;
+            width: 100%;
+            border-radius: 4px;
         }
+
+        .video-container video {
+            border-radius: 8px;
+            box-shadow: 0 0 2px 2px rgba(255, 217, 0, 0.959);
+            object-fit: cover;
+        }
+
         h1, h2 {
             color: #2c3e50;
         }
@@ -49,5 +67,27 @@ import Layout from './layout.astro';
             color: #444;
             line-height: 1.7;
         }
+
+        @media (max-width: 767.98px) {
+                section{
+                    background-color: white;
+                    padding: 20px 0px;
+                    border-radius: 10px;
+                    margin-bottom: 3rem;
+                    gap: 2rem;
+                }
+
+                h1,h2,p{
+                    padding: 0px 20px;
+                }
+
+                .blog-header{
+                    background-color: white;
+                    border-radius: 10px;
+                    margin: 20px 0;
+                }
+
+
+            }
     </style>
 </Layout>

@@ -1,14 +1,19 @@
 ---
 import Header from "../components/home/Header.astro";
+import Socials from "../components/home/Socials.astro";
+import Partido from "../components/home/Partido.astro";
 import Layout from "./layout.astro";
 import Card from "../components/home/Card.astro";
 import "../styles/index.css";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
 
 
 	<Header/>
+	<Socials/>
+	<Partido/>
 	<Card
 		title="Proyecto 1"
 		subtitle="Subtítulo del proyecto 1"
@@ -26,5 +31,6 @@ import "../styles/index.css";
 		buttonText="Ver más"
 		buttonLink="/politicas"
 	/>
+	<Footer/>
 </Layout>
 

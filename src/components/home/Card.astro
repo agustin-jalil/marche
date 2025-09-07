@@ -61,4 +61,20 @@ const { title, subtitle, videoUrl, description, buttonText, buttonLink } = Astro
 .card-button:hover {
     background: #005fcc;
 }
+
+@media (max-width: 767.98px) {
+    .card{
+        background-color: white;
+        padding: 20px 0px;
+        border-radius: 10px;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+
+    .card-button {
+
+        align-self: center; /* 👈 mueve el botón al lado opuesto */
+    }
+}
 </style>
