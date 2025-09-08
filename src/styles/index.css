@@ -6,9 +6,9 @@
 
 
 :root{
-  --c1: #f5c845; /* verde menta */
-  --c2: #ed5f2b; /* azul cielo */
-  --c3: #2e5ab6; /* lila */
+  --c1: #f5c845; 
+  --c2: #ed5f2b; 
+  --c3: #2e5ab6; 
   --duration: 12s;
 }
 

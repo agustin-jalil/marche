@@ -19,14 +19,30 @@ const { documento } = Astro.props;
   <article class="blog-post">
     <div class="blog-header">
       <h1>{documento.titulo}</h1>
-      <div style="display: flex; justify-content: space-between;">
+      <blockquote>
+        <blockquote class="blog-header__quote">
+          El Partido Verde promueve políticas sostenibles, inclusión social y el respeto por el medio ambiente como pilares fundamentales para el desarrollo de nuestra sociedad.
+        </blockquote>
+
+        <style>
+        .blog-header__quote {
+          font-style: italic;
+          width:100%;
+          padding: 0;
+          margin: 0;
+          text-align: center;
+          color: gray;
+        }
+        </style>
+      </blockquote>
+      <!-- <div class="blog-datos" style="display: flex; justify-content: space-between;">
         <small>
           Etiquetas: <em>{documento.etiquetas.join(", ")}</em>
         </small>
         <small>
           Última actualización: {documento.ultimaActualizacion}
         </small>
-      </div>
+      </div> -->
     </div>
 
     <div class="video-container" style="margin: 2rem 0;">
@@ -36,7 +52,7 @@ const { documento } = Astro.props;
       </video>
     </div>
 
-    <section>
+    <section class="blog-section">
       {documento.secciones.map(seccion => (
         <>
           <h2>{seccion.subtitulo}</h2>
@@ -47,4 +63,83 @@ const { documento } = Astro.props;
   </article>
 
   <Footer/>
+
+  <style>
+  .blog-post {
+    width: 100%;
+  }
+
+  .video-container {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+  .video-container video {
+    border-radius: 8px;
+    box-shadow: 0 0 2px 2px rgba(255, 217, 0, 0.959);
+    object-fit: cover;
+  }
+
+  .blog-post h1,
+  .blog-post h2 {
+    color: #2c3e50;
+  }
+
+  .blog-post p {
+    color: #444;
+    line-height: 1.7;
+  }
+
+  .blog-header {
+    background-color: white;
+    padding: 0px 10px;
+  }
+
+  .blog-header h1{
+    text-align: center;
+  }
+
+  /* SOLO afecta a este componente */
+  @media (max-width: 767.98px) {
+
+      .blog-header h1 {
+        text-align: center;
+      }
+
+    .blog-section {
+      background-color: white;
+      box-shadow: 0px 0px 10px var(--c1);
+      padding: 20px 0;
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      gap: 2rem;
+    }
+
+    .blog-section h1,
+    .blog-section h2,
+    .blog-section p {
+      padding: 0 20px;
+    }
+
+    .blog-header {
+      background-color: white;
+      border-radius: 10px;
+      margin: 20px 0;
+      padding-bottom: 2rem;
+      padding-top: 1rem;
+      box-shadow: 0px 0px 10px var(--c1);
+    }
+
+    .blog-datos{
+      flex-direction: column;
+      gap:12px;
+    }
+
+    .blog-section{
+      background-color: white;
+    }
+  }
+</style>
 </Layout>

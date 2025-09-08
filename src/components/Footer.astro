@@ -4,17 +4,13 @@
 
 <footer class="footer">
     <div class="footer-content">
-        <!-- logo  -->
-        <h2>Partido Político Ejemplo</h2>
-        <p>
-            Unidos por el cambio y el progreso. ¡Súmate a nuestra causa!
-        </p>
-        <div class="footer-social">
-            <a href="#">Facebook</a>
-            <a href="#">Twitter</a>
-            <a href="#">Instagram</a>
+        <img src="/signature.svg" width="200px" alt="">
+        <small>Firma del Doctor Agustin Marchetti</small>
+        <img src="/RECURSOS02.svg" width="300px" alt="logo de somos provincias unidas"/>
+        <div class="footer-small">
+            <small>&copy; {new Date().getFullYear()} Somos Provincias Unidas. Todos los derechos reservados.</small>
+            <small>Todos los derechos reservados.</small>
         </div>
-        <small>&copy; {new Date().getFullYear()} Partido Político Ejemplo. Todos los derechos reservados.</small>
     </div>
 </footer>
 
@@ -28,6 +24,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap:20px;
 }
 .footer-content h2 {
     margin-bottom: 1rem;
@@ -44,6 +41,14 @@
     text-decoration: underline;
 }
 
+.footer-small{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
 
 @media (max-width: 767.98px) {
     .footer{
@@ -52,6 +57,8 @@
         border-radius: 10px;
         margin-bottom: 3rem;
         gap: 2rem;
+        box-shadow: 0px 0px 10px var(--c1);
+
     }
 
     .footer-content{
